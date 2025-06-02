@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Recuerdo - Soluciones Creativas para Eventos Inolvidables</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #1A202C; /* Dark Charcoal */
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(26, 32, 44, 0.7), rgba(26, 32, 44, 0.7)), url('https://placehold.co/1920x1080/E2E8F0/4A5568?text=Fondo+Profesional+Abstracto');
+            background-size: cover;
+            background-position: center;
+        }
+        .text-accent { color: #2DD4BF; /* Teal Accent */ }
+        .bg-accent { background-color: #2DD4BF; /* Teal Accent */ }
+        .hover-bg-accent-dark:hover { background-color: #28B8A2; /* Darker Teal for hover */ }
+        .border-accent { border-color: #2DD4BF; }
+
+        .section-title {
+            font-size: 2.25rem; /* 36px */
+            line-height: 2.5rem; /* 40px */
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .section-subtitle {
+            font-size: 1.125rem; /* 18px */
+            line-height: 1.75rem; /* 28px */
+            color: #718096; /* Gray */
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem; /* 12px */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem; /* 8px */
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            display: inline-block;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .btn:hover {
+             transform: translateY(-2px) scale(1.02);
+             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .btn-primary {
+            background-color: #2DD4BF; /* Teal Accent */
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #28B8A2; /* Darker Teal */
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #2DD4BF; /* Teal Accent */
+            border: 2px solid #2DD4BF;
+        }
+        .btn-secondary:hover {
+            background-color: #2DD4BF;
+            color: white;
+        }
+        .btn-social {
+            padding: 0.6rem 1.2rem; /* Slightly smaller padding for social buttons */
+            font-size: 0.9rem; /* Slightly smaller font size */
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1DAE50;
+        }
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+        .btn-instagram:hover {
+            opacity: 0.9;
+        }
+
+        .gallery-img-professional {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        .gallery-img-professional:hover {
+            transform: scale(1.05);
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F7FAFC; /* Light Gray */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #A0AEC0; /* Medium Gray */
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #718096; /* Darker Gray */
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .modal-close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .modal-close-button:hover,
+        .modal-close-button:focus {
+            color: #333;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#inicio" class="text-3xl font-bold text-accent">
+                Tu Recuerdo
+            </a>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <ul id="menu-links" class="hidden md:flex space-x-8 items-center text-gray-700 font-semibold">
+                <li><a href="#inicio" class="hover:text-accent transition duration-300">Inicio</a></li>
+                <li><a href="#servicios" class="hover:text-accent transition duration-300">Servicios</a></li>
+                <li><a href="#galeria" class="hover:text-accent transition duration-300">Galería</a></li>
+                <li><a href="#contacto" class="btn btn-primary text-sm">Contactar</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg py-2">
+            <a href="#inicio" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition duration-300">Inicio</a>
+            <a href="#servicios" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition duration-300">Servicios</a>
+            <a href="#galeria" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition duration-300">Galería</a>
+            <a href="#contacto" class="block px-6 py-3 mx-4 my-2 btn btn-primary text-sm">Contactar</a>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero-bg min-h-screen flex items-center justify-center text-white pt-20 md:pt-0">
+        <div class="text-center p-6 max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Soluciones Creativas para <span class="text-accent">Eventos Inolvidables</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
+                En Tu Recuerdo, transformamos tus celebraciones con papelería artesanal y detalles personalizados. Desde Tarragona, creamos experiencias únicas para cumpleaños, bautizos y comuniones.
+            </p>
+            <div class="space-x-4">
+                <a href="#servicios" class="btn btn-primary text-lg">Ver Servicios</a>
+                <a href="#contacto" class="btn btn-secondary text-lg">Solicitar Presupuesto</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-gray-800">Nuestros Servicios Creativos</h2>
+            <p class="section-subtitle">
+                Ofrecemos una gama completa de papelería y detalles personalizados para hacer de tu evento algo verdaderamente especial y memorable.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-8 text-center fade-in-up">
+                    <div class="text-accent text-5xl mb-6"><i class="fas fa-birthday-cake"></i></div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Cumpleaños Únicos</h3>
+                    <p class="text-gray-600">Diseño de invitaciones, decoración temática, mesas de dulces y detalles personalizados que sorprenderán a tus invitados.</p>
+                </div>
+                <div class="card p-8 text-center fade-in-up" style="transition-delay: 0.1s;">
+                    <div class="text-accent text-5xl mb-6"><i class="fas fa-baby"></i></div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Bautizos con Encanto</h3>
+                    <p class="text-gray-600">Recordatorios delicados, papelería fina y detalles especiales para celebrar la llegada de tu bebé con ternura y elegancia.</p>
+                </div>
+                <div class="card p-8 text-center fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="text-accent text-5xl mb-6"><i class="fas fa-cross"></i></div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Comuniones Memorables</h3>
+                    <p class="text-gray-600">Papelería elegante, mesas de chuches temáticas y regalos personalizados para un día tan importante como la Primera Comunión.</p>
+                </div>
+                <div class="card p-8 text-center fade-in-up md:col-span-1 lg:col-span-3" style="transition-delay: 0.3s;">
+                    <div class="text-accent text-5xl mb-6"><i class="fas fa-palette"></i></div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Diseño de Papelería Personalizada</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Creamos todo tipo de elementos de papelería a medida: invitaciones, etiquetas, minutas, seating plans, toppers, guirnaldas y mucho más, adaptados completamente a tu estilo y evento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-gray-800">Nuestras Creaciones</h2>
+            <p class="section-subtitle">
+                Inspírate con algunos de nuestros trabajos anteriores. Cada proyecto es una muestra de nuestra dedicación y amor por los detalles.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="fade-in-up"><img src="https://placehold.co/400x350/D1FAE5/065F46?text=Diseño+Elegante+Bautizo" alt="[Imagen de Diseño Elegante para Bautizo]" class="gallery-img-professional"></div>
+                <div class="fade-in-up" style="transition-delay: 0.05s;"><img src="https://placehold.co/400x350/DBEAFE/1E40AF?text=Papelería+Moderna+Cumpleaños" alt="[Imagen de Papelería Moderna para Cumpleaños]" class="gallery-img-professional"></div>
+                <div class="fade-in-up" style="transition-delay: 0.1s;"><img src="https://placehold.co/400x350/FEF3C7/92400E?text=Detalles+Comunión+Sofisticados" alt="[Imagen de Detalles Sofisticados para Comunión]" class="gallery-img-professional"></div>
+                <div class="fade-in-up" style="transition-delay: 0.15s;"><img src="https://placehold.co/400x350/FCE7F3/9D174D?text=Invitaciones+Creativas" alt="[Imagen de Invitaciones Creativas]" class="gallery-img-professional"></div>
+                <div class="fade-in-up" style="transition-delay: 0.2s;"><img src="https://placehold.co/400x350/E0E7FF/3730A3?text=Mesa+Dulce+Profesional" alt="[Imagen de Mesa Dulce Profesional]" class="gallery-img-professional"></div>
+                <div class="fade-in-up" style="transition-delay: 0.25s;"><img src="https://placehold.co/400x350/D1FAE5/047857?text=Recuerdos+Artesanales" alt="[Imagen de Recuerdos Artesanales con Estilo]" class="gallery-img-professional"></div>
+                <div class="fade-in-up" style="transition-delay: 0.3s;"><img src="https://placehold.co/400x350/FEE2E2/991B1B?text=Etiquetas+Personalizadas" alt="[Imagen de Etiquetas Personalizadas Elegantes]" class="gallery-img-professional"></div>
+                <div class="fade-in-up" style="transition-delay: 0.35s;"><img src="https://placehold.co/400x350/F3E8FF/5B21B6?text=Decoración+Temática+Profesional" alt="[Imagen de Decoración Temática Profesional]" class="gallery-img-professional"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-16 md:py-24 bg-gray-800 text-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-white">¿Listo para Crear Algo Único?</h2>
+            <p class="section-subtitle !text-gray-400">
+                Ponte en contacto con nosotros para discutir tu próximo evento. Estaremos encantados de ayudarte a dar vida a tus ideas.
+            </p>
+            
+            <div class="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-xl shadow-2xl text-gray-800">
+                <form action="https://formsubmit.co/tu_email_aqui@ejemplo.com" method="POST">
+                    <input type="hidden" name="_subject" value="Nueva consulta profesional desde la web Tu Recuerdo">
+                    <input type="text" name="_honey" style="display:none">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="contactName" class="block text-gray-700 text-sm font-semibold mb-2">Nombre Completo:</label>
+                            <input type="text" id="contactName" name="Nombre" placeholder="Tu nombre" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent" required>
+                        </div>
+                        <div>
+                            <label for="contactEmail" class="block text-gray-700 text-sm font-semibold mb-2">Correo Electrónico:</label>
+                            <input type="email" id="contactEmail" name="Email" placeholder="tu@email.com" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent" required>
+                        </div>
+                    </div>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="contactPhone" class="block text-gray-700 text-sm font-semibold mb-2">Número de Teléfono:</label>
+                            <input type="tel" id="contactPhone" name="Teléfono" placeholder="Ej: 600123456" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent" required>
+                        </div>
+                        <div>
+                            <label for="contactEventType" class="block text-gray-700 text-sm font-semibold mb-2">Tipo de Evento:</label>
+                            <select id="contactEventType" name="Tipo de Evento" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent" required>
+                                <option value="" disabled selected>Selecciona un evento</option>
+                                <option value="Cumpleaños">Cumpleaños</option>
+                                <option value="Bautizo">Bautizo</option>
+                                <option value="Comunión">Comunión</option>
+                                <option value="Boda">Boda</option>
+                                <option value="Evento Corporativo">Evento Corporativo</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="contactDescription" class="block text-gray-700 text-sm font-semibold mb-2">Cuéntanos sobre tu evento:</label>
+                        <textarea id="contactDescription" name="Descripción" rows="5" placeholder="Describe tu idea, número de invitados, fecha aproximada, etc." class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary text-lg w-full md:w-auto">
+                            <i class="fas fa-paper-plane mr-2"></i> Enviar Solicitud
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-gray-400 mb-4">O contáctanos directamente:</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="https://wa.me/34614270709" target="_blank" class="btn btn-whatsapp btn-social flex items-center justify-center">
+                        <i class="fab fa-whatsapp text-xl mr-2"></i>WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/Tu_recuerdosymf" target="_blank" class="btn btn-instagram btn-social flex items-center justify-center">
+                        <i class="fab fa-instagram text-xl mr-2"></i>Instagram
+                    </a>
+                </div>
+                <p class="text-gray-500 text-sm mt-8">Ubicados en Tarragona, España.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-12 text-center">
+        <div class="container mx-auto px-6">
+            <a href="#inicio" class="text-2xl font-bold text-accent mb-4 inline-block">
+                Tu Recuerdo
+            </a>
+            <ul class="flex justify-center space-x-6 mb-6">
+                <li><a href="#inicio" class="hover:text-accent transition duration-300">Inicio</a></li>
+                <li><a href="#servicios" class="hover:text-accent transition duration-300">Servicios</a></li>
+                <li><a href="#galeria" class="hover:text-accent transition duration-300">Galería</a></li>
+                <li><a href="#contacto" class="hover:text-accent transition duration-300">Contacto</a></li>
+            </ul>
+            <div class="flex justify-center items-center space-x-4 mb-6">
+                 <a href="https://wa.me/34614270709" target="_blank" class="btn btn-whatsapp btn-social !p-3 text-lg" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/Tu_recuerdosymf" target="_blank" class="btn btn-instagram btn-social !p-3 text-lg" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <button id="shareButton" title="Compartir página" class="btn bg-gray-700 hover:bg-gray-600 text-white btn-social !p-3 text-lg focus:outline-none">
+                    <i class="fas fa-share-alt"></i>
+                </button>
+            </div>
+            <p>&copy; <span id="currentYear"></span> Tu Recuerdo. Todos los derechos reservados.</p>
+            <p class="text-sm">Soluciones creativas con un toque profesional.</p>
+        </div>
+    </footer>
+
+    <div id="messageModal" class="modal" style="display: flex;">
+        <div class="modal-content">
+            <span id="modalCloseButton" class="modal-close-button">&times;</span>
+            <p id="modalMessageText" class="text-gray-700 text-lg mt-4"></p>
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLinks = document.querySelectorAll('#menu-links a[href^="#"]:not([href="#contacto"]), #mobile-menu a[href^="#"]:not([href="#contacto"]), #menu-links a[href="#contacto"], #mobile-menu a[href="#contacto"]');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuToggle.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.hash !== "") {
+                    const hash = link.hash;
+                    const targetElement = document.querySelector(hash);
+                    if (targetElement) {
+                         e.preventDefault(); 
+                        const headerOffset = document.querySelector('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - headerOffset;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        const animatedElements = document.querySelectorAll('.fade-in-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        animatedElements.forEach(el => observer.observe(el));
+
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-3', 'shadow-lg');
+                header.classList.remove('py-4', 'shadow-sm');
+            } else {
+                header.classList.add('py-4', 'shadow-sm');
+                header.classList.remove('py-3', 'shadow-lg');
+            }
+        });
+
+        const messageModal = document.getElementById('messageModal');
+        const modalMessageText = document.getElementById('modalMessageText');
+        const modalCloseButton = document.getElementById('modalCloseButton');
+
+        function showModal(message) {
+            modalMessageText.textContent = message;
+            messageModal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            messageModal.style.display = 'none';
+        }
+
+        modalCloseButton.addEventListener('click', closeModal);
+        window.addEventListener('click', (event) => {
+            if (event.target === messageModal) {
+                closeModal();
+            }
+        });
+        
+        const shareButton = document.getElementById('shareButton');
+        shareButton.addEventListener('click', async () => {
+            const shareData = {
+                title: document.title,
+                text: 'Echa un vistazo a Tu Recuerdo - Soluciones Creativas para Eventos Inolvidables!',
+                url: window.location.href
+            };
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        showModal('¡Enlace copiado al portapapeles!');
+                    }).catch(err => {
+                        console.error('Error al copiar enlace: ', err);
+                        showModal('No se pudo copiar el enlace. Por favor, cópialo manualmente.');
+                    });
+                }
+            } catch (err) {
+                console.error('Error al compartir: ', err);
+                if (err.name !== 'AbortError') {
+                   showModal('Hubo un error al intentar compartir.');
+                }
+            }
+        });
+        messageModal.style.display = 'none';
+    </script>
+</body>
+</html>
