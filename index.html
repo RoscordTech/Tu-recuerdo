@@ -17,7 +17,8 @@
             font-family: 'Pacifico', cursive;
         }
         .hero-bg {
-            background-image: url('https://placehold.co/1200x800/f0e4e9/6c4b5e?text=Evento+Especial');
+            /* Imagen de fondo del Hero, asegúrate de tener "hero-evento-especial.jpg" en tu carpeta raíz */
+            background-image: url('hero-evento-especial.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -45,7 +46,8 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Sombra ligera */
         }
     </style>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz_erEiiEvZlRfOhnRCt-Ooz5yM9rBrgk&callback=initMap"></script>
+    <!-- Clave de API de Google Maps actualizada -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkuxUilQ75CH4Lx96loCsTASsF1u0WwSc&callback=initMap"></script>
 </head>
 <body class="bg-pink-50 text-gray-800">
 
@@ -90,7 +92,8 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-pink-700 mb-12 pacifico-font">Sobre Nosotros</h2>
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
-                    <img src="https://placehold.co/600x400/ffe4e1/a0522d?text=Trabajo+Artesanal" alt="Imagen representando el trabajo artesanal de Tu Recuerdo" class="rounded-lg shadow-xl w-full">
+                    <!-- Asegúrate de tener "trabajo-artesanal.jpg" en tu carpeta raíz -->
+                    <img src="trabajo-artesanal.jpg" alt="[Imagen de Trabajo Artesanal de Tu Recuerdo]" class="rounded-lg shadow-xl w-full">
                 </div>
                 <div class="md:w-1/2 text-lg text-gray-700 space-y-4">
                     <p>En <span class="pacifico-font text-pink-600 text-xl">Tu Recuerdo</span>, nos apasiona crear momentos especiales. Nacimos en Tarragona con la ilusión de ofrecer productos únicos y llenos de cariño para tus celebraciones más importantes.</p>
@@ -117,8 +120,8 @@
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
                     <div class="text-yellow-400 text-4xl mb-4 text-center"><i class="fas fa-cross"></i></div>
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-3 text-center">Comuniones Únicas</h3>
-                    <p class="text-gray-600 text-center">Papelería elegante, mesas de chuches temáticas y regalos personalizados para un día tan especial como la Primera Comunión.</p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3 text-center">Eventos Especiales</h3>
+                    <p class="text-gray-600 text-center">Papelería elegante, mesas de chuches temáticas y regalos personalizados para cualquier tipo de celebración especial.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
                     <div class="text-purple-500 text-4xl mb-4 text-center"><i class="fas fa-palette"></i></div>
@@ -153,12 +156,13 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-pink-700 mb-12 pacifico-font">Galería de Creaciones</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Carrusel Detalles Bautizo -->
                 <div class="rounded-xl shadow-xl overflow-hidden bg-white flex flex-col">
                     <div id="carousel-galeria-bautizo" class="relative">
-                        <div class="carousel-slide"><img src="https://placehold.co/400x300/ffccd5/800080?text=Bautizo+1" alt="[Imagen de Detalle Bautizo 1]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/ffdbe0/800080?text=Bautizo+2" alt="[Imagen de Detalle Bautizo 2]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/ffe8eb/800080?text=Bautizo+3" alt="[Imagen de Detalle Bautizo 3]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/fff5f6/800080?text=Bautizo+4" alt="[Imagen de Detalle Bautizo 4]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide"><img src="detalles-bautizo-01.jpg" alt="[Imagen de Detalle Bautizo 1]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="detalles-bautizo-02.jpg" alt="[Imagen de Detalle Bautizo 2]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="detalles-bautizo-03.jpg" alt="[Imagen de Detalle Bautizo 3]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="detalles-bautizo-04.jpg" alt="[Imagen de Detalle Bautizo 4]" class="w-full h-64 object-cover"></div>
                         <button class="carousel-prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-left"></i></button>
                         <button class="carousel-next absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-right"></i></button>
                         <div class="carousel-dots absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1.5 z-10"></div>
@@ -168,12 +172,13 @@
                     </div>
                 </div>
 
+                <!-- Carrusel Decoración Cumpleaños -->
                 <div class="rounded-xl shadow-xl overflow-hidden bg-white flex flex-col">
                     <div id="carousel-galeria-cumple" class="relative">
-                        <div class="carousel-slide"><img src="https://placehold.co/400x300/c8e6c9/2e7d32?text=Cumpleaños+1" alt="[Imagen de Decoración Cumpleaños 1]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/d8f0d9/2e7d32?text=Cumpleaños+2" alt="[Imagen de Decoración Cumpleaños 2]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/e8f9e9/2e7d32?text=Cumpleaños+3" alt="[Imagen de Decoración Cumpleaños 3]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/f8fff9/2e7d32?text=Cumpleaños+4" alt="[Imagen de Decoración Cumpleaños 4]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide"><img src="decoracion-cumpleanos-01.jpg" alt="[Imagen de Decoración Cumpleaños 1]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="decoracion-cumpleanos-02.jpg" alt="[Imagen de Decoración Cumpleaños 2]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="decoracion-cumpleanos-03.jpg" alt="[Imagen de Decoración Cumpleaños 3]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="decoracion-cumpleanos-04.jpg" alt="[Imagen de Decoración Cumpleaños 4]" class="w-full h-64 object-cover"></div>
                         <button class="carousel-prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-left"></i></button>
                         <button class="carousel-next absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-right"></i></button>
                         <div class="carousel-dots absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1.5 z-10"></div>
@@ -182,43 +187,14 @@
                         <h4 class="font-semibold text-xl text-pink-600">Decoración Cumpleaños</h4>
                     </div>
                 </div>
-
-                <div class="rounded-xl shadow-xl overflow-hidden bg-white flex flex-col">
-                    <div id="carousel-galeria-comunion" class="relative">
-                        <div class="carousel-slide"><img src="https://placehold.co/400x300/bbdefb/0d47a1?text=Comunión+1" alt="[Imagen de Recuerdo Comunión 1]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/cceeff/0d47a1?text=Comunión+2" alt="[Imagen de Recuerdo Comunión 2]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/ddffff/0d47a1?text=Comunión+3" alt="[Imagen de Recuerdo Comunión 3]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/eeffff/0d47a1?text=Comunión+4" alt="[Imagen de Recuerdo Comunión 4]" class="w-full h-64 object-cover"></div>
-                        <button class="carousel-prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-left"></i></button>
-                        <button class="carousel-next absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-right"></i></button>
-                        <div class="carousel-dots absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1.5 z-10"></div>
-                    </div>
-                    <div class="p-4 text-center">
-                        <h4 class="font-semibold text-xl text-pink-600">Recuerdos Comunión</h4>
-                    </div>
-                </div>
                 
-                <div class="rounded-xl shadow-xl overflow-hidden bg-white flex flex-col">
-                    <div id="carousel-galeria-mesadulce" class="relative">
-                        <div class="carousel-slide"><img src="https://placehold.co/400x300/f8bbd0/c2185b?text=Mesa+Dulce+1" alt="[Imagen de Mesa Dulce 1]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/f9cce5/c2185b?text=Mesa+Dulce+2" alt="[Imagen de Mesa Dulce 2]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/faddfa/c2185b?text=Mesa+Dulce+3" alt="[Imagen de Mesa Dulce 3]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/fbeeff/c2185b?text=Mesa+Dulce+4" alt="[Imagen de Mesa Dulce 4]" class="w-full h-64 object-cover"></div>
-                        <button class="carousel-prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-left"></i></button>
-                        <button class="carousel-next absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-right"></i></button>
-                        <div class="carousel-dots absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1.5 z-10"></div>
-                    </div>
-                    <div class="p-4 text-center">
-                        <h4 class="font-semibold text-xl text-pink-600">Mesas Dulces</h4>
-                    </div>
-                </div>
-
+                <!-- Carrusel Chuches Originales -->
                 <div class="rounded-xl shadow-xl overflow-hidden bg-white flex flex-col">
                     <div id="carousel-galeria-chuches" class="relative">
-                        <div class="carousel-slide"><img src="https://placehold.co/400x300/d1c4e9/512da8?text=Chuches+1" alt="[Imagen de Chuches Originales 1]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/e1d4f9/512da8?text=Chuches+2" alt="[Imagen de Chuches Originales 2]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/f1e4ff/512da8?text=Chuches+3" alt="[Imagen de Chuches Originales 3]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/f9f0ff/512da8?text=Chuches+4" alt="[Imagen de Chuches Originales 4]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide"><img src="chuches-originales-01.jpg" alt="[Imagen de Chuches Originales 1]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="chuches-originales-02.jpg" alt="[Imagen de Chuches Originales 2]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="chuches-originales-03.jpg" alt="[Imagen de Chuches Originales 3]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="chuches-originales-04.jpg" alt="[Imagen de Chuches Originales 4]" class="w-full h-64 object-cover"></div>
                         <button class="carousel-prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-left"></i></button>
                         <button class="carousel-next absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-right"></i></button>
                         <div class="carousel-dots absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1.5 z-10"></div>
@@ -228,27 +204,13 @@
                     </div>
                 </div>
 
-                <div class="rounded-xl shadow-xl overflow-hidden bg-white flex flex-col">
-                    <div id="carousel-galeria-invitaciones" class="relative">
-                        <div class="carousel-slide"><img src="https://placehold.co/400x300/b2dfdb/00796b?text=Invitación+1" alt="[Imagen de Invitación Especial 1]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/c2effb/00796b?text=Invitación+2" alt="[Imagen de Invitación Especial 2]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/d2ffff/00796b?text=Invitación+3" alt="[Imagen de Invitación Especial 3]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/e2ffff/00796b?text=Invitación+4" alt="[Imagen de Invitación Especial 4]" class="w-full h-64 object-cover"></div>
-                        <button class="carousel-prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-left"></i></button>
-                        <button class="carousel-next absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-right"></i></button>
-                        <div class="carousel-dots absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1.5 z-10"></div>
-                    </div>
-                    <div class="p-4 text-center">
-                        <h4 class="font-semibold text-xl text-pink-600">Invitaciones Especiales</h4>
-                    </div>
-                </div>
-
+                <!-- Carrusel Regalos Personalizados -->
                 <div class="rounded-xl shadow-xl overflow-hidden bg-white flex flex-col">
                     <div id="carousel-galeria-regalos" class="relative">
-                        <div class="carousel-slide"><img src="https://placehold.co/400x300/e6e6fa/483d8b?text=Regalo+1" alt="[Imagen de Regalo Personalizado 1]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/f0f0ff/483d8b?text=Regalo+2" alt="[Imagen de Regalo Personalizado 2]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/f8f8ff/483d8b?text=Regalo+3" alt="[Imagen de Regalo Personalizado 3]" class="w-full h-64 object-cover"></div>
-                        <div class="carousel-slide hidden"><img src="https://placehold.co/400x300/ffffff/483d8b?text=Regalo+4" alt="[Imagen de Regalo Personalizado 4]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide"><img src="regalos-personalizados-01.jpg" alt="[Imagen de Regalo Personalizado 1]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="regalos-personalizados-02.jpg" alt="[Imagen de Regalo Personalizado 2]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="regalos-personalizados-03.jpg" alt="[Imagen de Regalo Personalizado 3]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="regalos-personalizados-04.jpg" alt="[Imagen de Regalo Personalizado 4]" class="w-full h-64 object-cover"></div>
                         <button class="carousel-prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-left"></i></button>
                         <button class="carousel-next absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-right"></i></button>
                         <div class="carousel-dots absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1.5 z-10"></div>
@@ -257,6 +219,23 @@
                         <h4 class="font-semibold text-xl text-pink-600">Regalos Personalizados</h4>
                     </div>
                 </div>
+
+                <!-- NUEVO: Carrusel Toppers Personalizados -->
+                <div class="rounded-xl shadow-xl overflow-hidden bg-white flex flex-col">
+                    <div id="carousel-galeria-toppers" class="relative">
+                        <div class="carousel-slide"><img src="toppers-personalizados-01.jpg" alt="[Imagen de Topper Personalizado 1]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="toppers-personalizados-02.jpg" alt="[Imagen de Topper Personalizado 2]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="toppers-personalizados-03.jpg" alt="[Imagen de Topper Personalizado 3]" class="w-full h-64 object-cover"></div>
+                        <div class="carousel-slide hidden"><img src="toppers-personalizados-04.jpg" alt="[Imagen de Topper Personalizado 4]" class="w-full h-64 object-cover"></div>
+                        <button class="carousel-prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-next absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 text-sm z-10"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1.5 z-10"></div>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-semibold text-xl text-pink-600">Toppers Personalizados</h4>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -311,11 +290,12 @@
                 if (!mobileMenu.classList.contains('hidden')) {
                     mobileMenu.classList.add('hidden');
                 }
+                // Smooth scroll for anchor links
                 if (link.hash !== "") {
                     const hash = link.hash;
                     const targetElement = document.querySelector(hash);
                     if (targetElement) {
-                         e.preventDefault(); 
+                         e.preventDefault(); // Prevent default anchor click behavior
                         const headerOffset = document.querySelector('header').offsetHeight;
                         const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                         const offsetPosition = elementPosition - headerOffset;
@@ -358,7 +338,7 @@
 
 
             if (dotsContainer) {
-                dotsContainer.innerHTML = ''; 
+                dotsContainer.innerHTML = ''; // Clear existing dots
                 slides.forEach((_, index) => {
                     const dot = document.createElement('button');
                     dot.classList.add('carousel-dot', 'w-2', 'h-2', 'bg-gray-300', 'rounded-full', 'mx-0.5', 'focus:outline-none', 'transition-colors', 'duration-300');
@@ -439,25 +419,19 @@
         document.addEventListener('DOMContentLoaded', () => {
             initializeCarousel('carousel-galeria-bautizo', 7000);
             initializeCarousel('carousel-galeria-cumple', 7500);
-            initializeCarousel('carousel-galeria-comunion', 8000);
-            initializeCarousel('carousel-galeria-mesadulce', 8500);
             initializeCarousel('carousel-galeria-chuches', 9000);
-            initializeCarousel('carousel-galeria-invitaciones', 9500);
             initializeCarousel('carousel-galeria-regalos', 10000); 
+            initializeCarousel('carousel-galeria-toppers', 10500); 
         });
         // --- Fin del JavaScript para Carruseles ---
 
         // --- Inicio del JavaScript para Google Maps ---
         function initMap() {
-            // Coordenadas para Carrer de Pere Martell, 13, Tarragona
             const ubicacion = { lat: 41.1180, lng: 1.2485 }; 
-            // Crear el mapa, centrado en la ubicación
             const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 16, // Nivel de zoom
+                zoom: 16, 
                 center: ubicacion,
-                // mapId: 'TU_RECUERDO_MAP_ID' // Opcional: para estilos de mapa basados en la nube, requiere configuración adicional en Google Cloud.
             });
-            // Crear un marcador en la ubicación
             const marker = new google.maps.Marker({
                 position: ubicacion,
                 map: map,
